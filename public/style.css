@@ -22,9 +22,11 @@ body {
 } */
 
 header {
+  display: flex;
+  align-items: center;
+  height: 3em;
   background-color: rgba(37, 37, 37, 0.8);
   position: fixed;
-  display: flex;
   z-index: 2;
   width: 98%;
   border-bottom-right-radius: 20px;

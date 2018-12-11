@@ -8,7 +8,7 @@
 
 // new mapboxgl.Marker(locationMarker).setLngLat([-87.641, 41.895]).addTo(map); // [-74.009, 40.705] for NY
 
-const mapbox = require('mapbox-gl');
+const { Marker } = require('mapbox-gl');
 
 const iconURLs = {
   activity: 'http://i.imgur.com/WbMOfMl.png',
@@ -18,12 +18,11 @@ const iconURLs = {
 
 const buildMarker = (type, coordinates) => {
   let newEl = document.createElement('div');
-  console.log(newEl);
   newEl.style.name = type;
   newEl.style.width = '32px';
   newEl.style.height = '39px';
   newEl.style.backgroundImage = `url(${iconURLs[type]})`;
-  return new mapbox.Marker(newEl).setLngLat(coordinates);
+  return new Marker(newEl).setLngLat(coordinates);
 };
 
 module.exports = buildMarker;
